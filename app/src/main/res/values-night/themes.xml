@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Dark theme inherits from DayNight parent; colors.xml night values override automatically.
-         Only tweaks that are not covered by dynamic colors go here. -->
-    <style name="Theme.PathPulse" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Dark launch theme; only window overrides (colors handled in Compose). -->
+    <style name="Theme.PathPulse" parent="android:Theme.Material.NoActionBar">
         <item name="android:statusBarColor">#000000</item>
         <item name="android:navigationBarColor">#000000</item>
         <item name="android:windowLightStatusBar">false</item>
