@@ -22,18 +22,20 @@ else
     fi
 fi
 
-# Default JVM options
-DEFAULT_JVM_OPTS="-Xmx64m -Xms64m"
-
-# Build argument list: JVM opts + appname + classpath + main class + user args
-set -- -Xmx64m -Xms64m
+# JVM options for the java launcher itself.
+# These MUST be passed before -classpath, NOT as arguments to
+# GradleWrapperMain (which forwards them to the Gradle command line,
+# where an unknown '-X' option is a hard error).
+JVM_OPTS="-Xmx64m -Xms64m"
 if [ -n "${JAVA_OPTS}" ]; then
-    for opt in ${JAVA_OPTS}; do set -- "$opt" "$@"; done
+    JVM_OPTS="${JAVA_OPTS} ${JVM_OPTS}"
 fi
 if [ -n "${GRADLE_OPTS}" ]; then
-    for opt in ${GRADLE_OPTS}; do set -- "$opt" "$@"; done
+    JVM_OPTS="${GRADLE_OPTS} ${JVM_OPTS}"
 fi
-set -- -Dorg.gradle.appname="${APP_BASE_NAME}" "$@"
-set -- -classpath "${CLASSPATH}" org.gradle.wrapper.GradleWrapperMain "$@"
 
-exec "${JAVACMD}" "$@"
+exec "${JAVACMD}" ${JVM_OPTS} \
+    -Dorg.gradle.appname="${APP_BASE_NAME}" \
+    -classpath "${CLASSPATH}" \
+    org.gradle.wrapper.GradleWrapperMain "$@"
+
