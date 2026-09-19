@@ -9,7 +9,6 @@ import android.os.Build
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import androidx.lifecycle.LifecycleService
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
@@ -20,7 +19,7 @@ import com.unsmah.pathpulse.R
 import com.unsmah.pathpulse.data.PathPulseDatabase
 import com.unsmah.pathpulse.data.entity.TrackPoint
 
-class TrackingService : LifecycleService() {
+class TrackingService : android.app.Service() {
 
     companion object {
         private const val TAG = "TrackingService"

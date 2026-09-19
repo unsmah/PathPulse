@@ -5,8 +5,6 @@ import kotlin.math.atan2
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.math.sqrt
-import kotlin.math.toDegrees
-import kotlin.math.toRadians
 
 /**
  * Pure location utility functions with zero Android dependencies.
@@ -57,11 +55,11 @@ object LocationUtils {
         lat2: Double, lon2: Double
     ): Double {
         if (lat1 == lat2 && lon1 == lon2) return 0.0
-        val dLat = toRadians(lat2 - lat1)
-        val dLon = toRadians(lon2 - lon1)
+        val dLat = Math.toRadians(lat2 - lat1)
+        val dLon = Math.toRadians(lon2 - lon1)
         val a = sin(dLat / 2).let { sinIt ->
             sinIt * sinIt +
-                cos(toRadians(lat1)) * cos(toRadians(lat2)) *
+                cos(Math.toRadians(lat1)) * cos(Math.toRadians(lat2)) *
                 sin(dLon / 2) * sin(dLon / 2)
         }
         val c = 2 * atan2(sqrt(a), sqrt(1.0 - a))
@@ -114,11 +112,11 @@ object LocationUtils {
         lat2: Double, lon2: Double
     ): Double {
         if (lat1 == lat2 && lon1 == lon2) return 0.0
-        val dLon = toRadians(lon2 - lon1)
-        val y = sin(dLon) * cos(toRadians(lat2))
-        val x = cos(toRadians(lat1)) * sin(toRadians(lat2)) -
-                sin(toRadians(lat1)) * cos(toRadians(lat2)) * cos(dLon)
-        var theta = toDegrees(atan2(y, x))
+        val dLon = Math.toRadians(lon2 - lon1)
+        val y = sin(dLon) * cos(Math.toRadians(lat2))
+        val x = cos(Math.toRadians(lat1)) * sin(Math.toRadians(lat2)) -
+                sin(Math.toRadians(lat1)) * cos(Math.toRadians(lat2)) * cos(dLon)
+        var theta = Math.toDegrees(atan2(y, x))
         if (theta < 0) theta += 360.0
         return theta
     }
