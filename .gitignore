@@ -1,0 +1,31 @@
+# PathPulse — Android GPS tracking app with dual web map engine.
+# Build with: ./gradlew assembleDebug
+# CI: GitHub Actions builds the APK on push to main.
+# Install: scripts/download-apk.sh pulls the latest APK to ~/storage/downloads
+
+# Gradle
+.gradle/
+build/
+*.log
+
+# Android
+local.properties
+*.apk
+*.aab
+capture/
+screenshots/
+*.iml
+.idea/
+app/release/output-metadata.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keystore (never commit)
+*.jks
+*.keystore
+release-keys.gradle
+
+# Misc
+.ternm

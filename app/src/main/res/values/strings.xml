@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PathPulse</string>
+    
+    <!-- Navigation tabs -->
+    <string name="tab_track">Track</string>
+    <string name="tab_history">History</string>
+    <string name="tab_map">Map</string>
+    <string name="tab_reports">Reports</string>
+    <string name="tab_settings">Settings</string>
+    
+    <!-- Track screen -->
+    <string name="track_start_new">Start a new track</string>
+    <string name="track_current_name">Current track: %1$s</string>
+    <string name="track_distance">Distance</string>
+    <string name="track_duration">Duration</string>
+    <string name="track_current_speed">Current speed</string>
+    <string name="track_avg_speed">Avg speed</string>
+    <string name="track_points">Points</string>
+    <string name="track_start">Start</string>
+    <string name="track_stop">Stop</string>
+    <string name="track_pause">Pause</string>
+    <string name="track_resume">Resume</string>
+    <string name="track_options">Track options</string>
+    <string name="track_view_map">View on map</string>
+    <string name="track_view_history">View history</string>
+    
+    <!-- History screen -->
+    <string name="history_title">Track History</string>
+    <string name="history_empty">No tracks yet</string>
+    <string name="history_empty_message">Start tracking to see your routes here</string>
+    <string name="history_filter">Filter</string>
+    <string name="history_sort">Sort</string>
+    <string name="history_sort_date">Date</string>
+    <string name="history_sort_distance">Distance</string>
+    <string name="history_sort_duration">Duration</string>
+    <string name="history_delete">Delete</string>
+    <string name="history_delete_confirm">Delete this track?</string>
+    <string name="history_delete_message">This action cannot be undone.</string>
+    
+    <!-- Track detail screen -->
+    <string name="detail_title">Track Details</string>
+    <string name="detail_statistics">Statistics</string>
+    <string name="detail_points">Track Points</string>
+    <string name="detail_points_collapsed">Show points</string>
+    <string name="detail_points_expanded">Hide points</string>
+    <string name="detail_export">Export</string>
+    <string name="detail_export_gpx">Export as GPX</string>
+    <string name="detail_export_geojson">Export as GeoJSON</string>
+    <string name="detail_export_csv">Export as CSV</string>
+    <string name="detail_export_kml">Export as KML</string>
+    <string name="detail_delete">Delete track</string>
+    <string name="detail_share">Share</string>
+    
+    <!-- Map screen -->
+    <string name="map_title">Map</string>
+    <string name="map_engine">Map engine</string>
+    <string name="map_engine_maplibre">MapLibre</string>
+    <string name="map_engine_leaflet">Leaflet</string>
+    <string name="map_layer">Tile layer</string>
+    <string name="map_layer_osm">OpenStreetMap</string>
+    <string name="map_layer_satellite">Satellite</string>
+    <string name="map_layer_topo">Topographic</string>
+    <string name="map_overlays">Overlays</string>
+    <string name="map_overlays_traffic">Traffic</string>
+    <string name="map_overlays_terrain">Terrain</string>
+    <string name="map_center_location">Center on location</string>
+    <string name="map_live_tracking">Live tracking</string>
+
+    <!-- Live map screen -->
+    <string name="live_title">Live Tracking</string>
+    <string name="live_speed">Speed: %1$.1f km/h</string>
+    <string name="live_accuracy">Accuracy: \u00b1%1$d m</string>
+    <string name="live_back_to_map">Back to map</string>
+    
+    <!-- Reports screen -->
+    <string name="reports_title">Reports</string>
+    <string name="reports_empty">No reports yet</string>
+    <string name="reports_empty_message">Generate a report to see it here</string>
+    <string name="reports_generate">Generate report</string>
+    <string name="reports_view">View</string>
+    <string name="reports_share">Share</string>
+    <string name="reports_delete">Delete</string>
+    <string name="reports_type_pdf">PDF</string>
+
+    <!-- Live map screen -->
+
+    <string name="reports_type_png">PNG</string>
+    
+    <!-- Settings screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_map">Map settings</string>
+    <string name="settings_map_engine">Map engine</string>
+    <string name="settings_tile_layer">Tile layer</string>
+    <string name="settings_overlays">Map overlays</string>
+    <string name="settings_recording">Recording settings</string>
+    <string name="settings_profile">Recording profile</string>
+    <string name="settings_profile_walking">Walking</string>
+    <string name="settings_profile_cycling">Cycling</string>
+    <string name="settings_profile_driving">Driving</string>
+    <string name="settings_interval">Recording interval</string>
+    <string name="settings_min_distance">Min distance</string>
+    <string name="settings_accuracy_filter">Accuracy filter</string>
+    <string name="settings_auto_pause">Auto-pause</string>
+    <string name="settings_export">Export settings</string>
+    <string name="settings_default_format">Default export format</string>
+    <string name="settings_data">Data management</string>
+    <string name="settings_storage">View storage</string>
+    <string name="settings_clear_cache">Clear cache</string>
+    <string name="settings_delete_all">Delete all data</string>
+    <string name="settings_delete_all_confirm">Delete all tracks and data?</string>
+    <string name="settings_delete_all_message">This action cannot be undone. All tracks, points, and settings will be permanently deleted.</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version</string>
+    <string name="settings_licenses">Licenses</string>
+    
+    <!-- Common -->
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="ok">OK</string>
+    <string name="loading">Loading\u2026</string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
+    <string name="km">km</string>
+    <string name="m">m</string>
+    <string name="h">h</string>
+    <string name="min">min</string>
+    <string name="s">s</string>
+    <string name="kmh">km/h</string>
+    <string name="mps">m/s</string>
+</resources>

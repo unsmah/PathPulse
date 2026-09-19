@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- file_paths.xml: roots exposed through FileProvider -->
+    <paths>
+        <!-- app's internal cache (for temp files + tile cache) -->
+        <cache-path name="cache" path="." />
+        <!-- external cache dir (if available) -->
+        <external-cache-path name="external_cache" path="." />
+        <!-- downloads directory (for user-visible exports) -->
+        <files-path name="downloads" path="downloads/" />
+        <!-- optional: external files dir -->
+        <external-files-path name="external_files" path="." />
+    </paths>
+</resources>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>PathPulse Map</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:100%; height:100%; overflow:hidden; background:#0a0c10; }
+  #app { position:relative; width:100%; height:100%; }
+
+  /* Both engines stack on top of each other; only the active one is visible. */
+  .map-engine {
+    position:absolute; inset:0;
+    display:none;
+    background:#000;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .map-engine.active { display:block; }
+
+  #leafletMap { z-index:2; }
+  #maplibreMap { z-index:1; }
+
+  /* Minimal attribution overlay, lifted above both maps. */
+  #attribution {
+    position:absolute; bottom:6px; left:6px;
+    background: rgba(0,0,0,0.45);
+    color:#eee;
+    font: 11px sans-serif;
+    padding: 2px 6px;
+    border-radius: 3px;
+    pointer-events: none;
+    z-index:10;
+  }
+</style>
+
+<!-- Leaflet (web, offline — served from assets/leaflet/) -->
+<link rel="stylesheet" href="leaflet/leaflet.css" />
+<link rel="stylesheet" href="leaflet/MarkerCluster.css" />
+<link rel="stylesheet" href="leaflet/MarkerCluster.Default.css" />
+<script src="leaflet/leaflet.js"></script>
+<script src="leaflet/L.markercluster-src.js"></script>
+<!-- L.heat is a very small plugin; using the minified dist -->
+<script src="leaflet/L.heat.js"></script>
+
+<!-- Maplibre GL JS (web, offline — served from assets/maplibre/) -->
+<script src="maplibre/maplibre-gl.js"></script>
+<link rel="stylesheet" href="maplibre/maplibre-gl.css" />
+
+<style>
+  /* Leaflet overrides so it plays nicely in this dark AVOID-clipping widget. */
+  .leaflet-container { font: 14px/1.5 sans-serif; }
+  .leaflet-control-zoom a { background:#222 !important; color:#eee !important; }
+  .leaflet-control-attribution { background:rgba(0,0,0,0.35) !important; color:#aaa !important; font-size:10px !important; }
+  .leaflet-marker-icon, .leaflet-marker-shadow { } /* marker-cluster circles are drawn in SVG */
+
+  /* Maplibre: neutralize its own attribution to avoid noise; Kotlin layer gives us ours. */
+  .maplibregl-ctrl-attrib { display:none !important; }
+</style>
+
+<script src="bridge.js"></script>
+</head>
+<body>
+<div id="app">
+  <!-- LEAFLET ENGINE -->
+  <div id="leafletMap" class="map-engine" data-engine="leaflet"></div>
+  <!-- MAPLIBRE ENGINE -->
+  <div id="maplibreMap" class="map-engine" data-engine="maplibre"></div>
+  <div id="attribution"></div>
+</div>
+</body>
+</html>
